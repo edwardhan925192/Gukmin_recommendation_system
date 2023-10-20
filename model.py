@@ -1,3 +1,4 @@
+import torch
 from kernel_layer import KernelLayer
 from global_conv import GlobalKernel, GlobalConv
 
