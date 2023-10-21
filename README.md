@@ -48,9 +48,9 @@ train_matrix = user_item_matrix.apply(lambda row: pick_n_ones(row, 2), axis=1)
 train_r = train_matrix.values
 target_r = user_item_matrix.values
 train_r = pd.merge(train_matrix,final_df,on = 'resume_seq',how = 'left')
-train_r = train_r.iloc[1:,:]
+train_r = train_r.iloc[:,1:]
 target_r = pd.merge(user_item_matrix, final_df, on = 'resume_seq',how = 'left')
-target_r = target_r.iloc[1:,:]
+target_r = target_r.iloc[:,1:]
 train_r = train_r.values
 target_r = target_r.values
 ```
