@@ -5,6 +5,7 @@
 train_prep(matrix, n)
 find_ones(matrix)
 get_matrix(matrix, indexes)
+bce_loss(matrix, target_matrix)
 ```
 
 # Resume  
