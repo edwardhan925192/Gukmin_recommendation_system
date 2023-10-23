@@ -2,8 +2,9 @@
 
 # User matrix  
 ```markdown
-train_prep
-find_ones
+train_prep(matrix, n)
+find_ones(matrix)
+get_matrix(matrix, indexes)
 ```
 
 # Resume  
