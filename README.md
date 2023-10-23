@@ -1,5 +1,11 @@
 # Gukmin_recommendation_system
 
+# User matrix  
+```markdown
+train_prep
+find_ones
+```
+
 # Resume  
 ```markdown
 resume = pd.read_csv('/content/resume.csv')
