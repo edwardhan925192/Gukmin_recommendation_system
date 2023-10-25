@@ -7,6 +7,7 @@ find_ones(matrix)
 get_matrix(matrix, indexes)
 bce_loss(matrix, target_matrix)
 extract_unique_words(data, column_name)
+map_dict(input_set, input_list)
 translate(df,column, translation_dict) # seperate ; and translate with dict
 translations
 code_translations
