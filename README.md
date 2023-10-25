@@ -8,7 +8,8 @@ get_matrix(matrix, indexes)
 bce_loss(matrix, target_matrix)
 extract_unique_words(data, column_name)
 map_dict(input_set, input_list)
-translate(df,column, translation_dict) # translate is a mapper (can also be worked with clusters) 
+translate(df,column, translation_dict)
+map_cluster(df, column, mapping_dict)
 translations
 code_translations
 ```
