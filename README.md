@@ -2,6 +2,10 @@
 
 # User matrix  
 ```markdown
+one_hot_encode_column(df, column_name)
+one_hot_encode_numeric_range(df, column_name, range_size)
+one_hot_encode_date(df, column_name)
+
 train_prep(matrix, n)
 find_ones(matrix)
 get_matrix(matrix, indexes)
