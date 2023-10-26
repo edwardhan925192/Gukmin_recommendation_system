@@ -226,3 +226,35 @@ def bce_loss(output, target):
 
     # Compute and return the final loss value
     return masked_loss.sum() / mask.sum()
+
+# TQDM version 
+from tqdm import tqdm
+
+def matching_rows(data, column_lists, return_column):
+    results = []
+    
+    # Wrap the range with tqdm to show progress
+    for i in tqdm(range(len(data)), desc="Processing rows"):
+        current_matches = []
+        
+        # For the first set of columns, we just need exact matches
+        mask1 = (data[column_lists[0]] == data.iloc[i][column_lists[0]].values).all(axis=1)
+        
+        # For the second set of columns, we need to check if values are within a range
+        mask2 = ((data[column_lists[1]] - data.iloc[i][column_lists[1]].values).abs() <= 5).all(axis=1)
+        
+        # For the remaining sets of columns, we just need exact matches
+        other_masks = [(data[cols] == data.iloc[i][cols].values).all(axis=1) for cols in column_lists[2:]]
+        
+        # Combine all masks
+        final_mask = mask1 & mask2 & all(other_masks)
+        
+        # Exclude the current row
+        final_mask.iloc[i] = False
+        
+        # Append the matched rows' return_column values to current_matches
+        current_matches.extend(data.loc[final_mask, return_column].tolist())
+        
+        results.append(current_matches)
+
+    return results
