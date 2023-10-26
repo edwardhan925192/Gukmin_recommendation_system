@@ -15,6 +15,7 @@ extract_unique_words(data, column_name)
 map_dict(input_set, input_list)
 translate(df,column, translation_dict)
 map_cluster(df, column, mapping_dict)
+matching_rows(data, column_lists, return_column)
 translations
 code_translations
 ```
